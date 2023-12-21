@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div>
+        <h1>Edit Ordered Food Item</h1>
+    </div>
+    <form th:action="@{/receipts/new}" th:object="${receipts}" method="post">
+        <fieldset>
+
+            <input type="hidden" th:value="${receipts.ReceiptId}" name="ReceiptId">
+            <div class="form-group">
+                <label for="Amount">Amount</label>
+                <input type="number" step=0.01 class="form-control" id="Amount" th:value="${receipts.Amount}" name="Amount" min=50 required>
+            </div>
+            <div class="form-group">
+                <label for="Remark">Remark</label>
+                <input type="text" step=0.01 class="form-control" id="Remark" th:value="${receipts.Remark}" name="Remark" maxlength=100 required>
+            </div>
+            <div class="form-group">
+                <label for="members">member Name</label>
+                <select class="form-control" th:field="*{members}"  id="members" required>
+                    <th:block th:each="Item: ${member}">
+                        <option  th:value="${Item.MemberId}" th:text="${Item.FullName}"/>
+                    </th:block>
+                </select>
+            </div>
+
+
+            <div>
+                <a href="#" class="btn btn-outline-warning">Cancel</a>
+                <button class="btn btn-outline-success" type="submit">Update</button>
+
+            </div>
+
+
+
+        </fieldset>
+    </form>
+
+
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div>
+        <h1>Members</h1>
+    </div>
+    <table class="table table-hover" id="member-table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">member ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">States</th>
+            <th scope="col">Registration date</th>
+            <th scope="col">Saving amount</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="member:${members}">
+            <th th:text="${member.MemberId}"></th>
+            <td th:text="${member.FullName}"></td>
+            <td><a th:href="@{/members/delete/__${member.MemberId}__}" class="btn btn-outline-danger" onclick=" return confirm('Are You sure you want to delete?')">Delete</a>
+                <a th:href="@{/members/edit/__${member.MemberId}__}" class="btn btn-outline-warning">Update</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>
