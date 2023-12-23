@@ -12,24 +12,23 @@ import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
+
 
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long MemberId;
     private String FullName;
-    @OneToMany(mappedBy = "members", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    /*@OneToMany(mappedBy = "members", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference*/
+    @OneToMany(mappedBy = "members", cascade = CascadeType.ALL)
     private List<Receipt> receipts;
-    //private int Age;
-    //private String States;
+    private int Age;
 
     //@DateTimeFormat(pattern = "yyyy-mm-dd")
-    //private LocalDate RegistrationDate;
-    //private int  SavingAmount;
-    //private String Telephone;
+   private String RegistrationDate;
+    private int  SavingAmount;
+    private String Telephone;
 
     public Long getMemberId() {
         return MemberId;
@@ -45,5 +44,46 @@ public class Member {
 
     public void setFullName(String fullName) {
         FullName = fullName;
+    }
+
+    public List<Receipt> getReceipts() {
+        return receipts;
+    }
+
+    public void setReceipts(List<Receipt> receipts) {
+
+        this.receipts = receipts;
+    }
+
+    public int getAge() {
+        return Age;
+    }
+
+    public void setAge(int age) {
+        Age = age;
+    }
+
+    public String getRegistrationDate() {
+        return RegistrationDate;
+    }
+
+    public void setRegistrationDate(String registrationDate) {
+        RegistrationDate = registrationDate;
+    }
+
+    public int getSavingAmount() {
+        return SavingAmount;
+    }
+
+    public void setSavingAmount(int savingAmount) {
+        SavingAmount = savingAmount;
+    }
+
+    public String getTelephone() {
+        return Telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        Telephone = telephone;
     }
 }

@@ -14,23 +14,22 @@
       layout:decorate="~{master/masterlayout}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MizanAS</title>
 </head>
 <body>
 <th:block layout:fragment="content">
     <div>
-        <h1>Members</h1>
+        <h1> ዝርዝር ኣባላት</h1>
     </div>
     <table class="table table-hover" id="member-table">
         <thead class="table-dark">
         <tr>
-            <th scope="col">member ID</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">States</th>
-            <th scope="col">Registration date</th>
-            <th scope="col">Saving amount</th>
-            <th scope="col">Telephone</th>
+            <th scope="col">ቁፅሪ ኣባላት</th>
+            <th scope="col">ሙሉእ ሽም</th>
+            <th scope="col">ዕድመ</th>
+            <th scope="col">ዝተመዝገበሉ ዕለት</th>
+            <th scope="col">ዕቋር መጠን </th>
+            <th scope="col">ስልኪ ቁፅሪ</th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
@@ -38,6 +37,10 @@
         <tr th:each="member:${members}">
             <th th:text="${member.MemberId}"></th>
             <td th:text="${member.FullName}"></td>
+            <td th:text="${member.Age}"></td>
+            <td th:text="${member.RegistrationDate}"></td>
+            <td th:text="${member.SavingAmount}"></td>
+            <td th:text="${member.Telephone}"></td>
             <td><a th:href="@{/members/delete/__${member.MemberId}__}" class="btn btn-outline-danger" onclick=" return confirm('Are You sure you want to delete?')">Delete</a>
                 <a th:href="@{/members/edit/__${member.MemberId}__}" class="btn btn-outline-warning">Update</a></td>
         </tr>

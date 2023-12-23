@@ -9,7 +9,7 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/webjars/datatables/1.13.5/css/dataTables.bootstrap.min.css}" type="text/css">
 
-    <title>Title</title>
+    <title>MizanAS</title>
 </head>
 <body>
 <!--navbar-->
@@ -18,26 +18,29 @@
 
     </h1>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">MSACCO</a>
+<h1><a href="#" class="navbar-brand"> ሚዛን ዕቋርን ልቋሕን ሓላ/ዝተ/ሕ/ስ/ማሕበር </a></h1>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a th:href="@{/members/new}"  class="nav-link" th:method="GET">New Members</a>
+            <a th:href="@{/members/new}"  class="nav-link" th:method="GET">ሓደሽቲ አባለት መመዝገቢ </a>
         </li>
         <li class="nav-item active">
-            <a th:href="@{/members/list}"  class="nav-link" th:method="GET">List of Members</a>
+            <a th:href="@{/members/list}"  class="nav-link" th:method="GET">ዝርዝር ዝተመዝገቡ ኣባለት</a>
         </li>
-    </ul>
-    <ul class="navbar-nav mr-auto">
+
         <li class="nav-item active">
-            <a th:href="@{/receipts/new}"  class="nav-link" th:method="GET">New receipts</a>
+            <a th:href="@{/receipts/new}"  class="nav-link" th:method="GET">ደረሰኝ መመዝገቢ </a>
         </li>
         <li class="nav-item active">
-            <a th:href="@{/receipts/list}"  class="nav-link" th:method="GET">List of receipts</a>
+            <a th:href="@{/receipts/list}"  class="nav-link" th:method="GET">ዝርዝር ዝተመዝገበ ደረሰኝ</a>
         </li>
     </ul>
 </nav>
+<div>
+
+
+</div>
 <div class="container">
     <th:block layout:fragment="content"></th:block>
 </div>
@@ -46,9 +49,9 @@
 
 <footer class="footer">
     <div class="container">
-        <span class="text-muted">
-            mizan accounting System &copy; 2023 Developed by:yordanos tesfay @Microlink Info College MIS mini project advanced programing
-        </span>
+			<span class="text-muted">
+				Mizan Accounting System | dec 2023</span><span
+            style="float: right;" class="text-muted">devoloped by yordanos tesfay MIS Dipartment </span>
     </div>
 </footer>
 

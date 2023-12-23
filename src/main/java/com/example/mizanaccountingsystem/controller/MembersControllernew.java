@@ -1,6 +1,7 @@
 package com.example.mizanaccountingsystem.controller;
 
 import com.example.mizanaccountingsystem.model.Member;
+import com.example.mizanaccountingsystem.model.Receipt;
 import com.example.mizanaccountingsystem.repository.ImemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,9 +43,8 @@ public class MembersControllernew {
         return "members/edit";
     }
 
-
     @RequestMapping(value = "/members/edit", method = RequestMethod.POST)
-    public String updateMember(Model model,Member members){
+    public String updateDownloads(Model model,Member members){
         memberRepository.save(members);
         model.addAttribute("members", members);
         return "redirect:/members/list";

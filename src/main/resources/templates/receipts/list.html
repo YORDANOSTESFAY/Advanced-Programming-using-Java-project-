@@ -5,19 +5,20 @@
       layout:decorate="~{master/masterlayout}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MizanAS</title>
 </head>
 <body>
 <th:block layout:fragment="content">
     <div>
-        <h1>List of receipt</h1>
+        <h1>ዝርዝር ዝተመዝገበ ደረሰኝ</h1>
     </div>
     <table class="table table-hover" id="receipt-table">
         <thead class="table-dark">
         <tr>
-            <th scope="col">Recept ID</th>
-            <th scope="col">amounte</th>
-            <th scope="col">remark </th>
+            <th scope="col">ደረሰኝ ቁፅሪ</th>
+            <th scope="col">መጠን ቅርሺ</th>
+            <th scope="col">መብርሂ </th>
+            <th scope="col">ቁፅሪ ኣባልነት </th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
@@ -27,7 +28,7 @@
             <td th:text="${receipts.Amount}"></td>
             <td th:text="${receipts.Remark}"></td>
             <td th:text="${receipts.members.FullName}"></td>
-            <td><a th:href="@{/receipts/delete/__${receipts.ReceiptId}__}" class="btn btn-outline-danger">Delete</a>
+            <td><a th:href="@{/receipts/delete/__${receipts.ReceiptId}__}" class="btn btn-outline-danger" onclick=" return confirm('Are You sure you want to delete?')">Delete</a>
                 <a th:href="@{/receipts/edit/__${receipts.ReceiptId}__}" class="btn btn-outline-warning">Update</a></td>
         </tr>
         </tbody>

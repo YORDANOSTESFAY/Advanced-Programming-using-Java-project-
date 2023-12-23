@@ -27,31 +27,5 @@ public class Receipt {
         return ReceiptId;
     }
 
-    public void setReceiptId(Long receiptId) {
-        ReceiptId = receiptId;
-    }
 
-    public int getAmount() {
-        return Amount;
-    }
-
-    public void setAmount(int amount) {
-        Amount = amount;
-    }
-
-    public String getRemark() {
-        return Remark;
-    }
-
-    public void setRemark(String remark) {
-        Remark = remark;
-    }
-
-    public Member getMembers() {
-        return members;
-    }
-
-    public void setMembers(Member members) {
-        this.members = members;
-    }
 }
