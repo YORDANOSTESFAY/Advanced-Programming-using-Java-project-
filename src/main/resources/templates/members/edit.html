@@ -18,25 +18,25 @@
         <input type="hidden" th:value="${members.MemberId}" name="MemberId">
 
         <div class="form-group">
-            <label for="FullName">member fullname</label>
+            <label for="FullName">ሙሉእ ሽም</label>
             <input type="text" class="form-control" id="FullName" th:value="${members.FullName}" name="FullName" maxlength=25 required>
 
-            <label for="Age">member Age</label>
+            <label for="Age">ዕድመ</label>
             <input type="number" class="form-control" id="Age" th:value="${members.Age}" name="Age" required>
         </div>
 
         <div class="form-group">
-            <label for="RegistrationDate">Registration Date</label>
+            <label for="RegistrationDate">ዝተመዝገበሉ ዕለት</label>
             <input type="text" class="form-control" id="RegistrationDate" th:value="${members.RegistrationDate}" name="RegistrationDate" maxlength=25 required>
         </div>
 
         <div class="form-group">
-            <label for="SavingAmount">SavingAmount</label>
+            <label for="SavingAmount">ዕቋር መጠን </label>
             <input type="number" step=0.01 class="form-control" id="SavingAmount" th:value="${members.SavingAmount}" name="SavingAmount" min=50 required>
         </div>
 
         <div class="form-group">
-            <label for="Telephone">member Telephone</label>
+            <label for="Telephone">ስልኪ ቁፅሪ</label>
             <input type="text" class="form-control" id="Telephone" th:value="${members.Telephone}" name="Telephone" maxlength=25 required>
         </div>
 
